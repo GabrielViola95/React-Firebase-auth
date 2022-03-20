@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+const initialState = {
+  email: "",
+  password: "",
+}
 
 const Login = () => {
+
+  const [user, setUser] = useState(initialState);
+
   return (
     <div>
-        <h1>Login</h1>
+        <form>
+          <input type="email" name='email' placeholder='E-mail' id='email'  />
+          <input type="text" name='password' placeholder='contraseña' id='password'/>
+        </form>
     </div>
   )
 }

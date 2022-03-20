@@ -5,7 +5,11 @@ const Home = () => {
   
   
   const handleLogOut = async () => {
-    await logout();
+    try {
+      await logout();
+    } catch (error) {
+      console.log(error)
+    }
     
   };
 
@@ -16,7 +20,7 @@ const Home = () => {
   return (
     <div>
         <h1>Home</h1>
-        <p>Hola {user.email} ¿Qué quieres hacer hoy?</p>
+        <p>Hola {user.displayName || user.email} ¿Qué quieres hacer hoy?</p>
 
         <button onClick={handleLogOut}>Desconectarse</button>
     </div>

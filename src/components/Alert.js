@@ -1,11 +1,9 @@
 import React from 'react'
 
-const Alert = () => {
+export function Alert({message}) {
   return (
     <div>
-        <h1>Alert</h1>
+        <span style={{color: "red", fontWeight: "bold"}}>{message}</span>
     </div>
   )
 }
-
-export default Alert

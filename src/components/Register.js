@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
+import { Alert } from './Alert';
 
 
 const initialState = {
@@ -33,7 +34,7 @@ const Register = () => {
 
   return (
     <div>
-      {error && <p style={{color: "red", fontWeight: "bold"}}>{error}</p>}
+      {error && <Alert message={error} />}
       <form onSubmit={handleSubmit}>
         <label htmlFor='email'>Email</label>
         <input onChange={handleChange} type="email" placeholder='email@example.com'name='email'/>
